@@ -31,7 +31,7 @@ with st.sidebar:
             button_label = "空のチャット"
         if st.button(button_label, key=f"chat_button_{chat_id}"):
             st.session_state.current_chat_id = chat_id
-            st.experimental_rerun()
+            st.rerun()
 
 # メインチャット領域
 current_chat = st.session_state.chats[st.session_state.current_chat_id]
@@ -59,4 +59,4 @@ if user_msg:
     st.session_state.chats[st.session_state.current_chat_id] = current_chat
 
     # 再描画
-    st.experimental_rerun()
+    st.rerun()
